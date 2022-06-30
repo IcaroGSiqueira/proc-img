@@ -5,7 +5,7 @@ img = cv2.imread('harpia.jpg', 0)
 
 # A
 
-new_img = (0.5 * img) + 50
+new_img = (0.5 * img) + 1
 
 cv2.imwrite('filterHarpiaA.jpg', new_img)
 

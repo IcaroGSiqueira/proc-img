@@ -1,4 +1,4 @@
-N=10
+N=15
 
 def fat_loop(n):
     result = 1 if n > 0 else True
