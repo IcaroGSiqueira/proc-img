@@ -3,22 +3,23 @@ import numpy as np
 
 def conv(img, mask):
     new_img = img.copy()
-    for i in range(1, len(img)-1):
-        for j in range(1, len(img[0])-1):
-            new_img[i][j] = np.mean([
-                img[i-1][j-1] * mask[0][0],
-                img[i-1][j] * mask[0][1],
-                img[i-1][j+1] * mask[0][2],
-                img[i][j-1] * mask[1][0],
-                img[i][j] * mask[1][1],
-                img[i][j+1] * mask[1][2],
-                img[i+1][j-1] * mask[2][0],
-                img[i+1][j] * mask[2][1],
-                img[i+1][j+1] * mask[2][2]
+    padded_img = np.pad(new_img, pad_width=1, mode='constant', constant_values=127)
+    for i in range(1, len(padded_img)-1):
+        for j in range(1, len(padded_img[0])-1):
+            new_img[i-1][j-1] = np.sum([
+                padded_img[i-1][j-1] * mask[0][0],
+                padded_img[i-1][j] * mask[0][1],
+                padded_img[i-1][j+1] * mask[0][2],
+                padded_img[i][j-1] * mask[1][0],
+                padded_img[i][j] * mask[1][1],
+                padded_img[i][j+1] * mask[1][2],
+                padded_img[i+1][j-1] * mask[2][0],
+                padded_img[i+1][j] * mask[2][1],
+                padded_img[i+1][j+1] * mask[2][2]
                 ])
     return new_img
 
-img = cv2.imread('lena_ruido.jpg', 1)
+img = cv2.imread('lena_ruido.jpg', 0)
 
 kernel1 = np.array([[0,1,0], [1,1,1], [0,1,0]]) * (1/5)
 kernel2 = np.array([[1,1,1], [1,1,1], [1,1,1]]) * (1/9)
