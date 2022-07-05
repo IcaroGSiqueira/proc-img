@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread("./lena_gray.bmp")
+img = cv2.imread("./orig_images/lena_gray.bmp")
 
 elem = img.mean(axis=2)
 cont, bina = np.histogram(elem, range(255))

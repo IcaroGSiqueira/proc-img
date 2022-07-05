@@ -1,8 +1,8 @@
 import cv2 
 
-img = cv2.imread("./cena1.png", 0)
+img = cv2.imread("./orig_images/cena1.png", 0)
 
-img2 = cv2.imread("./cena2.png", 0)
+img2 = cv2.imread("./orig_images/cena2.png", 0)
 
 # A
 

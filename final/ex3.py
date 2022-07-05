@@ -1,7 +1,7 @@
 import cv2 
 import numpy as np
 
-img = cv2.imread("./lena_cor.bmp")
+img = cv2.imread("./orig_images/lena_cor.bmp")
 
 img_gray = img.copy()
 

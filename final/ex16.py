@@ -19,7 +19,7 @@ def conv(img, mask):
                 ])
     return new_img
 
-img = cv2.imread('lena_ruido.jpg', 0)
+img = cv2.imread('./orig_images/lena_ruido.jpg', 0)
 
 kernel1 = np.array([[0,1,0], [1,1,1], [0,1,0]]) * (1/5)
 kernel2 = np.array([[1,1,1], [1,1,1], [1,1,1]]) * (1/9)

@@ -1,7 +1,7 @@
 import cv2 
 import numpy as np
 
-img = cv2.imread('lena_ruido.jpg', 0)
+img = cv2.imread('/orig_images/lena_ruido.jpg', 0)
 
 kernel = np.array([[1,0,1], [0,1,0], [1,0,1]])*1/2
 

@@ -3,8 +3,8 @@ import numpy as np
 from scipy import ndimage
 from matplotlib import pyplot as plt
 
-img = cv2.imread("./forma1.png", 1)
-img2 = cv2.imread("./forma2.png", 1)
+img = cv2.imread("./orig_images/forma1.png", 1)
+img2 = cv2.imread("./orig_images/forma2.png", 1)
 
 cv2.imwrite('ex13/forma1&forma2.bmp', img&img2)
 cv2.imwrite('ex13/forma1|forma2.bmp', img|img2)

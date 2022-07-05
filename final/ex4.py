@@ -1,8 +1,8 @@
 import cv2 
 
-img = cv2.imread("./lena_cor.bmp")
+img = cv2.imread("./orig_images/lena_cor.bmp")
 
-img_gray = cv2.imread("./lena_gray.bmp", 0)
+img_gray = cv2.imread("./orig_images/lena_gray.bmp", 0)
 
 img7b = img.copy()
 img6b = img.copy()
