@@ -28,7 +28,6 @@ def highBoostFiltering(image,boost_factor):
                             image[i+1, j+1])/ 9
 
             mask = boost_factor*image[i, j] - blur_factor
-
             resultant_image[i, j] = image[i, j] + mask
 
     return resultant_image
