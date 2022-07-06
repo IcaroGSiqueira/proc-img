@@ -1,6 +1,11 @@
 import cv2 
 import numpy as np
 
+def mse(imgA, imgB):
+    err = np.sum((imgA.astype("float") - imgB.astype("float")) ** 2)
+    err /= float(imgA.shape[0] * imgA.shape[1])
+    return err
+
 img = cv2.imread('./orig_images/folha.png', 0)
 
 img_borda_adj4 = img.copy()
@@ -35,3 +40,5 @@ for i in range(1, len(img)-1):
 cv2.imwrite('ex6/folha_borda_adj4.jpg', img_borda_adj4)
 
 cv2.imwrite('ex6/folha_borda_adj8.jpg', img_borda_adj8)
+
+print(mse(img_borda_adj4, img_borda_adj8))
