@@ -24,6 +24,5 @@ horz = ndimage.convolve( x, roberts_horz )
 
 z = np.sqrt( np.square(horz) + np.square(vert))
 
-# plota imagens lado a lado para comparação
 cv2.imwrite('ex1/orig_img.bmp', x)
 cv2.imwrite('ex1/filt_img.bmp', z)

@@ -21,7 +21,7 @@ plt.imshow(sobel, cmap=plt.cm.gray, interpolation='nearest')
 plt.axis('off')
 plt.savefig('ex19/lena_gray_sobel.png', format='png', bbox_inches='tight')
 
-# # C
+# C
 
 plt.imshow(sobel - prewitt, cmap=plt.cm.gray, interpolation='nearest')
 plt.axis('off')
